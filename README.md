@@ -159,4 +159,4 @@ Navigate to the deepviz folder on your computer
 
 	git remote add glenn https://github.com/glenn/deep-visualization-toolbox.git
 	git fetch --all
-	git checkout --track -b glenn glenn/master
+	git checkout --track -b glenn glenn/glenn
