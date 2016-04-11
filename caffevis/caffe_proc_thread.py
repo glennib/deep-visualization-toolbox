@@ -24,6 +24,11 @@ class CaffeProcThread(CodependentThread):
         self.pause_after_keys = pause_after_keys
         self.debug_level = 0
         self.mode_gpu = mode_gpu      # Needed so the mode can be set again in the spawned thread, because there is a separate Caffe object per thread.
+
+        # For permutation
+        self.channel_order = self.state.settings.caffevis_channel_order
+        self.permutation_isset = self.channel_order is not None
+        # end permutation
         
     def run(self):
         print 'CaffeProcThread.run called'
@@ -81,6 +86,11 @@ class CaffeProcThread(CodependentThread):
                 #print 'TIMING:, processing frame'
                 self.frames_processed_fwd += 1
                 im_small = cv2.resize(frame, self.input_dims)
+                # For permutation
+                if self.permutation_isset:
+                    im_small = im_small[:,:,self.channel_order]
+                # end permutation
+
                 with WithTimer('CaffeProcThread:forward', quiet = self.debug_level < 1):
                     net_preproc_forward(self.net, im_small, self.input_dims)
 

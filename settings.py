@@ -298,6 +298,11 @@ caffevis_label_clr = locals().get('caffevis_label_clr', (.8,.8,.8))
 caffevis_label_fsize = locals().get('caffevis_label_fsize', 1.0 * global_font_size)
 caffevis_label_thick = locals().get('caffevis_label_thick', 1)
 
+# Added by Glenn:
+
+# For permutation
+caffevis_channel_order = locals().get('caffevis_channel_order', None)
+
 
 
 ####################################
