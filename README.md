@@ -153,3 +153,9 @@ If you have any problems running the Deep Vis Toolbox, here are a few things to 
  * If none of that helps, feel free to [email me](http://yosinski.com/) or [submit an issue](https://github.com/yosinski/deep-visualization-toolbox/issues). I might have left out an important detail here or there :).
 
 If you're desperate, it's also possible to [run the toolbox on Amazon EC2](doc/deep-vis-on-aws.md), but display will be much slower and images can be loaded only from file (not from webcam).
+
+# Adding Glenn's copy to your git
+Navigate to the deepviz folder on your computer
+	git remote add glenn https://github.com/glenn/deep-visualization-toolbox.git
+	git fetch --all
+	git checkout --track -b glenn glenn/master
