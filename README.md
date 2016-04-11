@@ -156,6 +156,7 @@ If you're desperate, it's also possible to [run the toolbox on Amazon EC2](doc/d
 
 # Adding Glenn's copy to your git
 Navigate to the deepviz folder on your computer
+
 	$ git remote add glenn https://github.com/glenn/deep-visualization-toolbox.git
 	$ git fetch --all
 	$ git checkout --track -b glenn glenn/master
